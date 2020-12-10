@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>중부대 착장 추천</title>
+</head>
+<body>
+
+  <h1>중부대 착장 추천</h1>
+  <div class="container">
+    <div class="item item_a">
+      <form action="/search" method="GET">
+        <p><input type="text" name="region" ><input type="submit" value="검색"></p>
+      </form>
+        <h2>  고양동 </h2>
+        <h4> 현재 {{now_temp}}℃ (최저 {{min_temp}}  / 최고 {{max_temp}} ) {{wind_chill}} </h4>
+        <h4>{{compare}}</h4>
+        <h4>오전 {{mornig_rain_r}}</h4>
+        <h4>오후 {{afternoon_rain_r}}</h4>
+    </div>
+
+    <div class="item item_b">
+      {% if 28 <= now_temp %}
+          <img src="{{url_for ('static', filename=image_file)}}" width="20%">
+          <h3>오늘의 날씨에는 민소매, 반팔, 반바지, 원피스를 추천합니다</h3>
+      {% elif 23 <= now_temp <= 27 %}
+          <img src="{{url_for ('static', filename=image_file)}}" width="20%">
+          <h3>오늘의 날씨에는 반팔, 얇은 셔츠, 반바지, 면바지를 추천합니다</h3>
+      {% elif 20 <= now_temp <= 22 %}
+          <img src="{{url_for ('static', filename=image_file)}}" width="20%">
+          <h3>오늘의 날씨에는 얇은 가디건, 긴팔, 면바지, 청바지를 추천합니다</h3>
+      {% elif 17 <= now_temp <= 19 %}
+          <img src="{{url_for ('static', filename=image_file)}}" width="20%">
+          <h3>오늘의 날씨에는 얇은 니트, 맨투맨, 가디건, 청바지를 추천합니다</h3>
+      {% elif 12 <= now_temp <= 16 %}
+          <img src="{{url_for ('static', filename=image_file)}}" width="20%">
+          <h3>오늘의 날씨에는 자켓, 가디건, 야상, 스타킹, 청바지, 면바지를 추천합니다</h3>
+      {% elif 9 <= now_temp <= 11 %}
+          <img src="{{url_for ('static', filename=image_file)}}" width="20%">
+          <h3>오늘의 날씨에는 자켓, 트렌치코트, 야상, 니트, 청바지, 스타킹을 추천합니다</h3>
+      {% elif 5 <= now_temp <= 8 %}
+          <img src="{{url_for ('static', filename=image_file)}}" width="20%">
+          <h3>오늘의 날씨에는 코트, 가죽자켓, 히트텍, 니트, 레깅스를 추천합니다</h3>
+      {% else %}
+          <img src="{{url_for ('static', filename=image_file)}}" width="20%">
+          <h3>오늘의 날씨에는 패딩, 두꺼운코드, 목도리, 기모제품을 추천합니다</h3>
+      {% endif %}
+    </div>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+body{
+  margin-top: 100px;
+
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 200px;
+
+
+}
+
+img{
+  resize: both;
+}
+
+.container{
+  font-size: 0;
+
+}
+
+.item {
+  display: inline-block;
+  font-size: 1rem;
+  vertical-align : middle;
+}
+
+.item_a{
+  width: 30%;
+  text-align: center;
+  padding-left: 330px;
+
+}
+
+.item_b{
+  width: 35%;
+  text-align: center;
+
+
+}
